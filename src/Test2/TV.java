@@ -1,9 +1,10 @@
 package Test2;
 
 /**
- *定义一个电视机类，实现电视机的基本功能（换台，调整音量，开关）
+ * 定义一个电视机类，实现电视机的基本功能（换台，调整音量，开关）
+ *
  * @author Daydreamer
- *2020-10-22
+ * 2020-10-22
  */
 
 public class TV {
@@ -27,19 +28,27 @@ public class TV {
         Model = model;
     }
 
-    public void turnOn(){ON_Off = true;}
-    public void turnOff(){ON_Off = false;}
-    public void VolumeLevelUp(){
-        if (ON_Off&&VolumeLevel<30){
+    public void turnOn() {
+        ON_Off = true;
+    }
+
+    public void turnOff() {
+        ON_Off = false;
+    }
+
+    public void VolumeLevelUp() {
+        if (ON_Off && VolumeLevel < 30) {
             VolumeLevel++;
         }
     }
-    public void VolumeLevelDown(){
-        if (ON_Off&&VolumeLevel>0){
+
+    public void VolumeLevelDown() {
+        if (ON_Off && VolumeLevel > 0) {
             VolumeLevel--;
         }
     }
-    public void setChannel(int newChannel){
+
+    public void setChannel(int newChannel) {
         if (ON_Off) {
             if (newChannel < 1 || newChannel > Channels) {
                 System.out.println("无此频道");
@@ -48,7 +57,8 @@ public class TV {
             }
         }
     }
-    public void ChannelUp(){
+
+    public void ChannelUp() {
         if (ON_Off) {
             if (Channel == 100) {
                 Channel = 1;
@@ -57,7 +67,8 @@ public class TV {
             }
         }
     }
-    public void ChannelDown(){
+
+    public void ChannelDown() {
         if (ON_Off) {
             if (Channel == 1) {
                 Channel = 100;
@@ -66,15 +77,16 @@ public class TV {
             }
         }
     }
-    public void printTV(){
-        System.out.println("Brand:"+Brand);
-        System.out.println("Model:"+Model);
+
+    public void printTV() {
+        System.out.println("Brand:" + Brand);
+        System.out.println("Model:" + Model);
         System.out.print("ONOFF:");
         if (ON_Off) System.out.print("ON");
         else System.out.print("OFF");
         System.out.println();
-        System.out.println("Channel:"+Channel);
-        System.out.println("VolumeLevel:"+VolumeLevel);
+        System.out.println("Channel:" + Channel);
+        System.out.println("VolumeLevel:" + VolumeLevel);
         System.out.println();
     }
 
